@@ -4,83 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
 </head>
 <body>
 
-    <!--The for loop definitely works-->
-    <!--To be added still:  Start with a base array, and have...-->
-    <!--Conditionals determine what arrays will concatonate...-->
-    <!--On top of each other-->
-    <!--Use separate standalone conditionals to make this happen-->
+    <h1>Password Generator</h1>
+    <p>Fill out the selection criteria below and click "Submit" to generate a secure, random password.  At a minimum your password will contain eight lower case characters.  The maximum allowable length is 128.</p>
+
+    <form>
+
+        <ul>
+<li>Would you like your password to contain capital letters?
+        <button id="yes-to-caps">Yes</button>
+        <button id="no-to-caps">No</button>
+    </li>
+<br>
+<li>Would you like your password to contain special characters?
+        <button id="yes-to-special">Yes</button>
+        <button id="no-to-special">No</button>
+</li>
+        <br>
+
+    <li>Would you like your password to contain numbers?
+            <button id="yes-to-numbers">Yes</button>
+            <button id="no-to-numbers">No</button>
+    </li>
+            <br>
+
+    <li> <span id="charCount"></span>
+
+        <button id="more">More</button>
+        <button id="less">Less</button>
+
+    </li>       
+
+
+    </ul>
+
+
+
+
+    <input type="submit" value="Submit" id="submitBtn">
+    </form>
+
+    <h4><span id="final-password"></span> </h4>
     
+<!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <script type="text/javascript">
-    
-    var baseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-    var capitalLetrs = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-    var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?", "`", "~", "=", "+", "-"];
-    var capital = confirm("Would you like your password to include capital letters?");
-    var special = confirm("Would you like your password to include special characters?");
-    var numeric = confirm("Would you like your password to include numbers?");
-    var length = prompt("How many characters would you like your password to be?");
-    var arr = [];
-    
-pwLength();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
-function pwLength(){
-if (length > 128 || length < 8) {
-    alert("Your password must contain between 8 and 128 characters.");
-    length = prompt("How many characters would you like your password to be?");
-    pwLength();
-} else {
-    generatePW();
-};
-};
+    <script src="./script.js"></script>
 
-function generatePW() {
-
-for (x = 0; x < 1; x++) {
-
-    if (capital === true) {
-
-var arrayOne = baseArray.concat(capitalLetrs);
-
-} else {
-    var arrayOne = baseArray;
-};
-
-    if (special === true) {
-
-        var arrayTwo = arrayOne.concat(specialChar);
-    } else {
-        var arrayTwo = arrayOne;
-    };
-
-    if (numeric === true) {
-        var arrayThree = arrayTwo.concat(numbers);
-    } else {
-        var arrayThree = arrayTwo;
-    };
-
-};
-
-for(i = 0; i < length; i++) {
-
-var num = Math.floor((Math.random() * arrayThree.length));
-var pwChar = arrayThree[num];
-arr.push(pwChar);
-};
-
-var finalPW = arr.join('');
-
-console.log(finalPW);
-
-};
-
-    
-    
-    </script>
     
 </body>
 </html>
