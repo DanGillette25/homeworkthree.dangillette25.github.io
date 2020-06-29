@@ -1,7 +1,33 @@
-.selected {
-    border: 2px solid blue;
+/* Tag styling */
+
+
+li {
+    list-style-type: none;
 }
 
-.not-selected {
-    border: none;
+h1 {
+    background-color: lightblue;
+    color: white;
+    text-align: center;
 }
+
+form{
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+
+/* Class Styling for buttons and final password display */
+
+.selected {
+    border: 4px solid blue;
+}
+
+.final-border-box {
+    border: 4px solid black;
+    padding: 3px 3px 3px 3px;
+}
+

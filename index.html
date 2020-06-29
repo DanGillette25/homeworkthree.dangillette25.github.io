@@ -9,9 +9,11 @@
 </head>
 <body>
 
+    <!---Header-->
     <h1>Password Generator</h1>
     <p>Fill out the selection criteria below and click "Submit" to generate a secure, random password.  At a minimum your password will contain eight lower case characters.  The maximum allowable length is 128.</p>
 
+<!--Question form begins here-->    
     <form>
 
         <ul>
@@ -43,14 +45,17 @@
     </ul>
 
 
-
-
+<!--Submit and Start Over Buttons-->
+    <button id="refresh">Start Over</button>
     <input type="submit" value="Submit" id="submitBtn">
     </form>
 
+<!--Password Display-->
     <h4><span id="final-password"></span> </h4>
     
-<!-- jQuery CDN -->
+<!-- jQuery for mobile responsiveness and the last script link is for my JavaScript -->
+<!-- document that enables the password generator to function-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

@@ -21,6 +21,7 @@
     var characterCount = document.querySelector("#charCount");
     var increase = document.querySelector("#more");
     var decrease = document.querySelector("#less");
+    var refresh = document.querySelector("#refresh");
 
 
     //Event Listeners and functions for selection criteria
@@ -98,6 +99,13 @@
         console.log(length);
     }
         });
+
+
+// Start Over button
+
+refresh.addEventListener("click", function(){
+    location.reload();
+});
     
 
 // Submit button
@@ -154,11 +162,12 @@ function generatePW() {
         
         var finalPW = arr.join('');
 
-        //Lastly, we display the password
+        //Lastly, we display the password with a box around the border
         displayPW();
         
         function displayPW(){
-        finalPWbox.textContent = finalPW;
+        finalPWbox.textContent = "Your password is: " + finalPW;
+        finalPWbox.classList.add('final-border-box')
         }
         };
     
